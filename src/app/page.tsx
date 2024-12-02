@@ -8,22 +8,24 @@ import { SkillsSection } from "@/components/skills-section"
 import { ExperienceSection } from "@/components/experience-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
-import { LanguageToggle } from '@/components/language-toggle'
 import { EducationSection } from '@/components/education-section'
 import { PortfolioSection } from '@/components/portfolio-section'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 export default function Home() {
   const [lang, setLang] = useState<'en' | 'es'>('en')
 
   return (
-    <div className="bg-zinc-900 min-h-screen">
-      <NavHeader lang={lang} />
-      <LanguageToggle lang={lang} setLang={setLang} />
-      <main>
+    <div className="min-h-screen">
+      <NavHeader lang={lang} setLang={setLang} />
+      <main id='main'>
         <HeroSection lang={lang} />
         <AboutSection lang={lang} />
         <SkillsSection lang={lang} />
-        <PortfolioSection  />
+        <PortfolioSection lang={lang} />
         <ExperienceSection lang={lang} />
         <EducationSection lang={lang} />
         <ContactSection lang={lang} />

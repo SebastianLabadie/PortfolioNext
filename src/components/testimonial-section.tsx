@@ -10,18 +10,18 @@ export function TestimonialSection() {
             <div className="space-y-4">
               <p className="text-lg text-gray-300">
                 The <span className="text-gray-300">design quality</span>, flexibility, documentation and
-                support are all absolutely <span className="text-yellow-500">excellent</span>. I buy the Avada
+                support are all absolutely <span className="text-primary">excellent</span>. I buy the Avada
                 theme for all my clients, knowing that whatever they
                 require, Avada will be able to deliver.
               </p>
               <div className="space-y-1">
                 <h3 className="text-xl font-semibold text-white">Josef Sharon</h3>
-                <p className="text-yellow-500">CEO, Omisoft</p>
+                <p className="text-primary">CEO, Omisoft</p>
               </div>
             </div>
           </div>
           <div className="flex-1 relative">
-            <div className="bg-yellow-400 rounded-3xl overflow-hidden">
+            <div className="bg-primary rounded-3xl overflow-hidden">
               <Image
                 src="/placeholder.svg"
                 alt="Testimonial"

@@ -1,8 +1,20 @@
-export function Footer() {
+
+
+
+export function Footer({lang}: {lang: "en" | "es"}) {
+  const content = {
+    en: {
+      title: "Thanks for Scrolling"
+    },
+    es: {
+      title: "Gracias por scrollear"
+    },
+  };
+
   return (
-    <footer className="py-12 bg-zinc-900 border-t border-zinc-800">
+    <footer className="py-[100px] bg-bgSecondary ">
       <div className="container mx-auto px-4 text-center">
-        <p className="text-2xl font-serif text-yellow-500">"Thanks for Scrolling"</p>
+        <p className="text-4xl font-sourceSerifPro text-primary mb-10">"{content[lang].title}"</p>
       </div>
     </footer>
   )

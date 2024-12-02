@@ -1,36 +1,84 @@
 import { Search } from 'lucide-react'
 import Link from "next/link"
+import { LanguageToggle } from './language-toggle'
+import MyLogo from '../../public/my_logo3.svg'
+import Image from 'next/image'
 
-export function NavHeader({ lang }: { lang: 'en' | 'es' }) {
+export function NavHeader({ lang, setLang }: { lang: 'en' | 'es', setLang: (lang: 'en' | 'es') => void }) {
   const content = {
     en: {
       about: "About",
       portfolio: "Portfolio",
+      experience: "Experience",
       contact: "Contact"
     },
     es: {
       about: "Acerca de",
       portfolio: "Portfolio",
+      experience: "Experiencia",
       contact: "Contacto"
     }
   }
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    const headerOffset = sectionId === 'experience' ? 125 : 93;
+    
+    const elementPosition = element?.getBoundingClientRect().top ?? 0;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  };
+
+
+
+
+  
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-900/90 backdrop-blur-sm">
+    <header className="h-[92px] fixed top-0 left-0 right-0 z-50 bg-bgPrimary backdrop-blur-sm ">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-yellow-500 text-2xl font-bold">
-            D
+          <Link href="/" onClick={(e) => scrollToSection(e, 'main')} className="text-primary text-2xl font-bold">
+            <Image
+              priority
+              src={MyLogo}
+              alt="My Logo"
+              width={60}
+              height={60}
+            />
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#about" className="text-gray-300 hover:text-white transition-colors">
+            <Link 
+              href="#about" 
+              onClick={(e) => scrollToSection(e, 'about')} 
+              className="text-navInactive hover:text-navActive transition-colors"
+            >
               {content[lang].about}
             </Link>
-            <Link href="#portfolio" className="text-gray-300 hover:text-white transition-colors">
+            <Link 
+              href="#portfolio" 
+              onClick={(e) => scrollToSection(e, 'portfolio')} 
+              className="text-navInactive hover:text-navActive transition-colors"
+            >
               {content[lang].portfolio}
             </Link>
-            <Link href="#contact" className="text-gray-300 hover:text-white transition-colors">
+            <Link 
+              href="#experience" 
+              onClick={(e) => scrollToSection(e, 'experience')} 
+              className="text-navInactive hover:text-navActive transition-colors"
+            >
+              {content[lang].experience}
+            </Link>
+            <Link 
+              href="#contact" 
+              onClick={(e) => scrollToSection(e, 'contact')} 
+              className="text-navInactive hover:text-navActive transition-colors"
+            >
               {content[lang].contact}
             </Link>
           </nav>
@@ -44,7 +92,9 @@ export function NavHeader({ lang }: { lang: 'en' | 'es' }) {
               />
               <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
             </div>
+              <LanguageToggle lang={lang} setLang={setLang} />
           </div>
+
         </div>
       </div>
     </header>
