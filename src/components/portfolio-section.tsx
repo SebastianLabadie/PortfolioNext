@@ -10,9 +10,8 @@ const projects = [
     title: "Gestion Interna CNdeF",
     image: "/images/nacional.png",
     contentDescription: [
-      {es: `Es una aplicacion de gestion interna para el Club Nacional de Football, optimizando procesos y mejorando la eficiencia operativa. Tiene 3 modulos Operaciones, Reservas y RRHH. \n
-        Desde esta aplicacion los usuarios pueden realizar sus tareas diarias, reservar canchas, salas de reuniones, gimnasios,etc. Y ademas pedir adelantos salariales o licencias como vacaciones, dias por estudio, donaciones de sangre, etc.`},
-      {en: "It is an internal management application for Club Nacional de Football, optimizing processes and improving operational efficiency. It has 3 modules: Operations, Reservations and HR. From this application, users can perform their daily tasks, reserve courts, meeting rooms, gyms, etc. And also request salary advances or leave as vacations, study days, blood donations, etc."}
+      {es: `\tEs una aplicacion de gestion interna para el Club Nacional de Football, optimizando procesos y mejorando la eficiencia operativa. Tiene 3 modulos Operaciones, Reservas y RRHH.\n\n\tDesde esta aplicacion los usuarios pueden realizar sus tareas diarias, reservar canchas, salas de reuniones, gimnasios,etc. Y ademas pedir adelantos salariales o licencias como vacaciones, dias por estudio, donaciones de sangre, etc.`},
+      {en: `\tIt is an internal management application for Club Nacional de Football, optimizing processes and improving operational efficiency. It has 3 modules: Operations, Reservations and HR.\n\n\tFrom this application, users can perform their daily tasks, reserve courts, meeting rooms, gyms, etc. And also request salary advances or leave as vacations, study days, blood donations, etc.`}
     ],
     contentType: "video" as const,
     content: ["/videos/nacional.mp4"	] // Replace with actual video URL
@@ -21,7 +20,7 @@ const projects = [
     title: "Trigenus",
     image: "/placeholder.svg",
     contentDescription: [
-      {es: "Plataforma innovadora para la gestión de proyectos de energía renovable, facilitando la colaboración y el seguimiento en tiempo real."},
+      {es: "Es una aplicacion de recoleccion de residuos utilizada tanto por comercios, escuelas y hogares. S"},
       {en: "Innovative platform for managing renewable energy projects, facilitating collaboration and real-time tracking."}
     ],
     contentType: "gallery" as const,
@@ -86,7 +85,8 @@ export function PortfolioSection({lang}: {lang: "en" | "es"}) {
   }
   return (
     <section id="portfolio" className="py-20 bg-bgSecondary">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative">
+        <div className="pattern hidden md:grid place-content-center absolute h-[260px] w-[260px] -top-[200px] -right-0"></div>
         <h2 className="text-5xl font-bold text-white mb-12 text-center font-sourceSerifPro ">{content[lang].title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (

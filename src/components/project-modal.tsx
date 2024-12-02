@@ -39,7 +39,7 @@ export function ProjectModal({ isOpen, onClose, project, lang }: ProjectModalPro
               <X size={24} />
             </button>
           </div>
-          <p className="text-gray-300 mb-6">
+          <p className="text-gray-300 mb-6 whitespace-pre-wrap">
             {project.contentDescription.find(desc => desc[lang])?.[lang]}
           </p>
           {project.contentType === 'video' ? (
