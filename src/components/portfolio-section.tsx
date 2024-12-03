@@ -7,6 +7,7 @@ const projects = [
   {
     title: "Gestion Interna CNdeF",
     image: "/images/nacional/mockups.png",
+    type:"APP",
     contentDescription: [
       {
         es: `\tEs una aplicacion de gestion interna para el Club Nacional de Football, optimizando procesos y mejorando la eficiencia operativa. Tiene 3 modulos Operaciones, Reservas y RRHH.\n\tDesde esta aplicacion los usuarios pueden realizar sus tareas diarias, reservar canchas, salas de reuniones, gimnasios,etc. Y ademas pedir adelantos salariales o licencias como vacaciones, dias por estudio, donaciones de sangre, etc.`,
@@ -21,6 +22,7 @@ const projects = [
   {
     title: "Trigenus",
     image: "/images/trigenus/mockups.png",
+    type:"APP",
     contentDescription: [
       {
         es: `\tEs una aplicacion de recoleccion de residuos utilizada tanto por comercios, escuelas y hogares. El objetivo es facilitar la recoleccion y mejorar la eficiencia en la gestion de residuos generando un impacto ambiental, social y economico.`,
@@ -43,7 +45,8 @@ const projects = [
   },
   {
     title: "Tecnicos",
-    image: "/placeholder.svg",
+    image: "/images/tecnicos/mockup.png",
+    type:"APP",
     contentDescription: [
       {
         es: "\tEs una aplicacion de field service para que las cuadrillas de tecnicos del rubro de telecomunicaciones puedan realizar sus tareas, instalaciones, desconecciones, reparaciones, mudanzas, etc. \n\tDesde esta aplicacion los tecnicos sus tareas del dia, enviar comandos a distintos dispositivos decodificadores, chromecast, etc. Pueden counicarse con el cliente, pueden subir fotos de evidencia, pueden manifestar problemas con su visita.",
@@ -54,14 +57,21 @@ const projects = [
     ],
     contentType: "gallery" as const,
     content: [
-      "/images/trigenus/1.jpg",
-      "/images/trigenus/2.jpg",
-      "/images/trigenus/3.jpg",
+      "/images/tecnicos/1.jpg",
+      "/images/tecnicos/2.jpg",
+      "/images/tecnicos/3.jpg",
+      "/images/tecnicos/4.jpg",
+      "/images/tecnicos/5.jpg",
+      "/images/tecnicos/6.jpg",
+      "/images/tecnicos/7.jpg",
+      "/images/tecnicos/8.jpg",
+      "/images/tecnicos/9.jpg",
     ], 
   },
   {
     title: "Mi TCC",
     image: "/images/MiTCC/mockups.png",
+    type:"APP",
     contentDescription: [
       {
         es: "\tEs una aplicacion para autogestion de clientes, desde esta aplicacion los usuarios pueden ver sus servicios, sus facturas, afiliarse a un debito automatico, realizar reclamos, contratar productos, firmar contratos pendientes, etc",
@@ -87,8 +97,9 @@ const projects = [
     ], 
   },
   {
-    title: "Ventas Alonex",
-    image: "/placeholder.svg",
+    title: "Ventas",
+    image: "/images/ventas/mockup.png",
+    type:"APP",
     contentDescription: [
       {
         es: "Sistema de gestión de ventas para Alonex, aumentando la eficiencia y proporcionando análisis detallados en tiempo real.",
@@ -98,11 +109,24 @@ const projects = [
       },
     ],
     contentType: "gallery" as const,
-    content: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"], 
+    content: [
+      "/images/ventas/1.jpg",
+      "/images/ventas/2.jpg",
+      "/images/ventas/3.jpg",
+      "/images/ventas/4.jpg",
+      "/images/ventas/5.jpg",
+      "/images/ventas/6.jpg",
+      "/images/ventas/7.jpg",
+      "/images/ventas/8.jpg",
+      "/images/ventas/9.jpg",
+      "/images/ventas/10.jpg",
+      "/images/ventas/11.jpg",
+    ], 
   },
   {
     title: "CRM",
-    image: "/placeholder.svg",
+    image: "/images/CRM/mockup.png",
+    type:"WEB",
     contentDescription: [
       {
         es: "Sistema CRM personalizado, diseñado para mejorar la relación con los clientes y aumentar la productividad del equipo de ventas.",
@@ -112,7 +136,16 @@ const projects = [
       },
     ],
     contentType: "gallery" as const,
-    content: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"], 
+    content: [
+      "/images/CRM/1.png",
+      "/images/CRM/2.png",
+      "/images/CRM/3.png",
+      "/images/CRM/4.png",
+      "/images/CRM/5.png",
+      "/images/CRM/6.png",
+      "/images/CRM/7.png",
+      "/images/CRM/8.png",
+    ], 
   },
 ];
 

@@ -12,6 +12,7 @@ interface ProjectModalProps {
   onClose: () => void
   project: {
     title: string
+    type: 'APP' | 'WEB'
     contentDescription: { [key: string]: string }[]
     contentType: 'video' | 'gallery'
     content: string[] // URLs for video or images
@@ -29,7 +30,7 @@ export function ProjectModal({ isOpen, onClose, project, lang }: ProjectModalPro
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
-      
+
       const handleEsc = (e: KeyboardEvent) => {
         if (e.key === 'Escape') {
           onClose()
@@ -54,11 +55,11 @@ export function ProjectModal({ isOpen, onClose, project, lang }: ProjectModalPro
   }
 
   return (
-    <div 
-      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" 
+    <div
+      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
       onClick={handleBackdropClick}
     >
-      <div className="bg-zinc-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-zinc-900 rounded-lg max-w-[80vw] max-h-[90vh] overflow-y-auto">
         <div className="p-6">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-bold text-white">{project.title}</h2>
@@ -71,14 +72,14 @@ export function ProjectModal({ isOpen, onClose, project, lang }: ProjectModalPro
           </p>
           {project.contentType === 'video' ? (
             <video width="100%" height="auto" controls preload="auto">
-            <source src={project.content[0]} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+              <source src={project.content[0]} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           ) : (
             <Swiper
               modules={[Navigation, Pagination]}
-              spaceBetween={30}
-              slidesPerView={3}
+              spaceBetween={0}
+              slidesPerView={project.type === 'APP' ? 3 : 1}
               navigation
               centeredSlides={true}
               pagination={{ clickable: true }}
@@ -86,7 +87,16 @@ export function ProjectModal({ isOpen, onClose, project, lang }: ProjectModalPro
               {project.content.map((image, index) => (
 
                 <SwiperSlide key={index}  >
-                 <Image src={image} alt={`${project.title} - Image ${index + 1}`} width={400} height={400} className="max-w-[250px] h-auto" />
+                  <Image src={image} alt={`${project.title} - Image ${index + 1}`}
+                    width={project.type === 'APP' ? 320 : 1200}
+                    height={0}
+                    objectFit="cover"
+                    // layout="fill"
+                    priority
+                    quality={100}
+                    style={{ width: project.type === 'APP' ? '320px' : '90%', height: 'auto', objectFit: 'contain' , margin:'0 auto'}}
+                  />
+                 
                 </SwiperSlide>
               ))}
             </Swiper>
