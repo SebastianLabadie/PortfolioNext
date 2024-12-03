@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${rethinkSans.variable} ${sourceSerifPro.variable} ${josefinSans.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${rethinkSans.variable} ${sourceSerifPro.variable} ${josefinSans.variable} antialiased scroll-bar`}
       >
         {children}
       </body>

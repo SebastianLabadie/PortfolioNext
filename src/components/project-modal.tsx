@@ -5,6 +5,7 @@ import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import Image from 'next/image'
 
 interface ProjectModalProps {
   isOpen: boolean
@@ -25,12 +26,38 @@ export function ProjectModal({ isOpen, onClose, project, lang }: ProjectModalPro
     setMounted(true)
   }, [])
 
-  if (!mounted) return null
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+      
+      const handleEsc = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          onClose()
+        }
+      }
+      window.addEventListener('keydown', handleEsc)
 
+      return () => {
+        document.body.style.overflow = 'unset'
+        window.removeEventListener('keydown', handleEsc)
+      }
+    }
+  }, [isOpen, onClose])
+
+  if (!mounted) return null
   if (!isOpen) return null
 
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClose()
+    }
+  }
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" 
+      onClick={handleBackdropClick}
+    >
       <div className="bg-zinc-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6">
           <div className="flex justify-between items-center mb-4">
@@ -51,14 +78,15 @@ export function ProjectModal({ isOpen, onClose, project, lang }: ProjectModalPro
             <Swiper
               modules={[Navigation, Pagination]}
               spaceBetween={30}
-              slidesPerView={1}
+              slidesPerView={3}
               navigation
+              centeredSlides={true}
               pagination={{ clickable: true }}
-              className="rounded-lg overflow-hidden"
             >
               {project.content.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <img src={image} alt={`${project.title} - Image ${index + 1}`} className="w-full h-auto" />
+
+                <SwiperSlide key={index}  >
+                 <Image src={image} alt={`${project.title} - Image ${index + 1}`} width={400} height={400} className="max-w-[250px] h-auto" />
                 </SwiperSlide>
               ))}
             </Swiper>

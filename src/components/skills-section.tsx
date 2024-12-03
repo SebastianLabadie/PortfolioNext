@@ -2,16 +2,16 @@ import Atropos from "atropos/react";
 import Image from "next/image";
 
 const skills = [
-  { name: "React", icon: "/images/react.png", iconHeight: 75 },
-  { name: "React Native / Expo", icon: "/images/expo.png", iconHeight: 60 },
-  { name: "Node.js", icon: "/images/node.png", iconHeight: 75 },
-  { name: "Git", icon: "/images/git.png", iconHeight: 75 },
-  { name: "Docker", icon: "/images/docker.webp", iconHeight: 75 },
-  { name: "AWS", icon: "/images/aws.png", iconHeight: 75 },
-  { name: "Vue", icon: "/images/vue.png", iconHeight: 75 },
-  { name: "Linux", icon: "/images/linux.png", iconHeight: 75 },
-  { name: "Html & CSS & JS", icon: "/images/html_css_js.png", iconHeight: 75 },
-  { name: "Genexus", icon: "/images/genexus.png", iconHeight: 75 },
+  { name: "React", icon: "/images/skills/react.png", iconHeight: 75 },
+  { name: "React Native / Expo", icon: "/images/skills/expo.png", iconHeight: 60 },
+  { name: "Node.js", icon: "/images/skills/node.png", iconHeight: 75 },
+  { name: "Git", icon: "/images/skills/git.png", iconHeight: 75 },
+  { name: "Docker", icon: "/images/skills/docker.webp", iconHeight: 75 },
+  { name: "AWS", icon: "/images/skills/aws.png", iconHeight: 75 },
+  { name: "Vue", icon: "/images/skills/vue.png", iconHeight: 75 },
+  { name: "Linux", icon: "/images/skills/linux.png", iconHeight: 75 },
+  { name: "Html & CSS & JS", icon: "/images/skills/html_css_js.png", iconHeight: 75 },
+  { name: "Genexus", icon: "/images/skills/genexus.png", iconHeight: 75 },
 ];
 
 export function SkillsSection({ lang }: { lang: "en" | "es" }) {
@@ -31,7 +31,7 @@ export function SkillsSection({ lang }: { lang: "en" | "es" }) {
           {content[lang].title}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 xs:grid-cols-1 gap-6 justify-center">
-          {skills.map((skill, index) => (
+          {skills.map((skill) => (
             <Atropos key={skill.name} className="my-atropos shadow-md">
               <div
                 className="bg-bgTertiary p-6 rounded-lg flex flex-col items-center justify-center gap-4 "
