@@ -1,7 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
-import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
-import { FaX } from "react-icons/fa6";
 import SocialMedia from "./social-media";
 
 export function ContactSection({ lang }: { lang: "en" | "es" }) {

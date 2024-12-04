@@ -1,4 +1,3 @@
-import Link from "next/link"
 import SocialMedia from "./social-media"
 
 export function HeroSection({ lang }: { lang: 'en' | 'es' }) {
