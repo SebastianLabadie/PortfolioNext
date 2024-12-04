@@ -2,8 +2,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { ProjectModal } from "./project-modal";
+import { Project } from "../../types";
 
-const projects = [
+const projects: Project[] = [
   {
     title: "Gestion Interna CNdeF",
     image: "/images/nacional/mockups.png",
@@ -151,7 +152,7 @@ const projects = [
 
 export function PortfolioSection({ lang }: { lang: "en" | "es" }) {
   const [selectedProject, setSelectedProject] = useState<
-    (typeof projects)[0] | null
+    Project | null
   >(null);
 
   const content = {

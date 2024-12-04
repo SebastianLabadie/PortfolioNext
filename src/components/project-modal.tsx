@@ -6,17 +6,12 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import Image from 'next/image'
+import { Project } from '../../types'
 
 interface ProjectModalProps {
   isOpen: boolean
   onClose: () => void
-  project: {
-    title: string
-    type: 'APP' | 'WEB'
-    contentDescription: { [key: string]: string }[]
-    contentType: 'video' | 'gallery'
-    content: string[] // URLs for video or images
-  }
+  project: Project
   lang: 'en' | 'es'
 }
 
