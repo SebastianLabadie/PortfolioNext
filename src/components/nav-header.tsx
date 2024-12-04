@@ -1,10 +1,13 @@
-import { Search } from 'lucide-react'
+import { Search, Menu, X } from 'lucide-react'
 import Link from "next/link"
 import { LanguageToggle } from './language-toggle'
-import MyLogo from '../../public/my_logo3.svg'
+import MyLogo from '../../public/my_logo.svg'
 import Image from 'next/image'
+import { useState } from 'react'
 
 export function NavHeader({ lang, setLang }: { lang: 'en' | 'es', setLang: (lang: 'en' | 'es') => void }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const content = {
     en: {
       about: "About",
@@ -83,9 +86,11 @@ export function NavHeader({ lang, setLang }: { lang: 'en' | 'es', setLang: (lang
             </Link>
           </nav>
 
-          <div className="flex items-center space-x-4">
+         
+
+          <div className="hidden md:flex items-center space-x-4">
             <div className="relative hidden md:block">
-              <input
+              <input 
                 type="search"
                 placeholder="Search"
                 className="bg-zinc-800 text-white rounded-md pl-3 pr-10 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-yellow-500"
@@ -95,8 +100,67 @@ export function NavHeader({ lang, setLang }: { lang: 'en' | 'es', setLang: (lang
               <LanguageToggle lang={lang} setLang={setLang} />
           </div>
 
+          <div className="md:hidden">
+          <button 
+            className="md:hidden text-navInactive hover:text-navActive"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+            
+          </div>
+
         </div>
       </div>
+
+      {isMenuOpen && (
+        <div className="md:hidden absolute top-[92px] left-0 right-0 bg-bgPrimary border-t border-zinc-800">
+         
+          <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+            <Link 
+              href="#about" 
+              onClick={(e) => {
+                scrollToSection(e, 'about');
+                setIsMenuOpen(false);
+              }} 
+              className="text-navInactive hover:text-navActive transition-colors"
+            >
+              {content[lang].about}
+            </Link>
+            <Link 
+              href="#portfolio" 
+              onClick={(e) => {
+                scrollToSection(e, 'portfolio');
+                setIsMenuOpen(false);
+              }} 
+              className="text-navInactive hover:text-navActive transition-colors"
+            >
+              {content[lang].portfolio}
+            </Link>
+            <Link 
+              href="#experience" 
+              onClick={(e) => {
+                scrollToSection(e, 'experience');
+                setIsMenuOpen(false);
+              }} 
+              className="text-navInactive hover:text-navActive transition-colors"
+            >
+              {content[lang].experience}
+            </Link>
+            <Link 
+              href="#contact" 
+              onClick={(e) => {
+                scrollToSection(e, 'contact');
+                setIsMenuOpen(false);
+              }} 
+              className="text-navInactive hover:text-navActive transition-colors"
+            >
+              {content[lang].contact}
+            </Link>
+            <LanguageToggle lang={lang} setLang={setLang} />
+          </nav>
+        </div>
+      )}
     </header>
   )
 }

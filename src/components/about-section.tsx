@@ -16,7 +16,7 @@ export function AboutSection({ lang }: { lang: 'en' | 'es' }) {
         <h2 className="text-5xl font-bold text-white mb-8 font-sourceSerifPro">{content[lang].title}</h2>
         <div className="flex  gap-4">
           <div className="w-[60px] h-[1px] mt-4 bg-primary transition-colors" />
-          <p className="text-white max-w-4xl text-xl">
+          <p className="text-white w-[90%] md:w-full text-xl">
             {content[lang].description}
           </p>
         </div>

@@ -71,7 +71,7 @@ export function ProjectModal({ isOpen, onClose, project, lang }: ProjectModalPro
             {project.contentDescription.find(desc => desc[lang])?.[lang]}
           </p>
           {project.contentType === 'video' ? (
-            <video width="100%" height="auto" controls preload="auto">
+            <video width="80%" height="auto" controls preload="auto" className='mx-auto' >
               <source src={project.content[0]} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
