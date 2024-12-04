@@ -42,6 +42,7 @@ export function SkillsSection({ lang }: { lang: "en" | "es" }) {
                     alt={skill.name}
                     width={100}
                     height={skill.iconHeight}
+                    priority
                     style={{
                       height: `${skill.iconHeight}px !important`,
                       width: "auto !important",

@@ -63,11 +63,11 @@ export function ProjectModal({ isOpen, onClose, project, lang }: ProjectModalPro
         <div className="p-6">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-bold text-white">{project.title}</h2>
-            <button onClick={onClose} className="text-gray-400 hover:text-white">
+            <button onClick={onClose} className="text-gray-100 hover:text-white">
               <X size={24} />
             </button>
           </div>
-          <p className="text-gray-300 mb-6 whitespace-pre-wrap">
+          <p className="text-gray-100 mb-6 whitespace-pre-wrap text-lg">
             {project.contentDescription.find(desc => desc[lang])?.[lang]}
           </p>
           {project.contentType === 'video' ? (

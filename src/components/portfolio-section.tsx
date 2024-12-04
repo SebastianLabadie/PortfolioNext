@@ -25,10 +25,10 @@ const projects = [
     type:"APP",
     contentDescription: [
       {
-        es: `\tEs una aplicacion de recoleccion de residuos utilizada tanto por comercios, escuelas y hogares. El objetivo es facilitar la recoleccion y mejorar la eficiencia en la gestion de residuos generando un impacto ambiental, social y economico.`,
+        es: `\tEs una aplicación de recolección de residuos utilizada tanto por comercios, escuelas y hogares. El objetivo es facilitar la recolección y mejorar la eficiencia en la gestión de residuos, generando un impacto ambiental, social y económico.`,
       },
       {
-        en: `\tIt is an application for collecting waste used by both businesses, schools and households. The goal is to facilitate collection and improve efficiency in waste management, generating an environmental, social and economic impact.`,
+        en: `\tIt is a waste collection application used by businesses, schools, and households. The goal is to facilitate waste collection and improve efficiency in waste management, creating an environmental, social, and economic impact.`,
       },
     ],
     contentType: "gallery" as const,
@@ -49,10 +49,10 @@ const projects = [
     type:"APP",
     contentDescription: [
       {
-        es: "\tEs una aplicacion de field service para que las cuadrillas de tecnicos del rubro de telecomunicaciones puedan realizar sus tareas, instalaciones, desconecciones, reparaciones, mudanzas, etc. \n\tDesde esta aplicacion los tecnicos sus tareas del dia, enviar comandos a distintos dispositivos decodificadores, chromecast, etc. Pueden counicarse con el cliente, pueden subir fotos de evidencia, pueden manifestar problemas con su visita.",
+        es: "\tEs una aplicación de field service para que las cuadrillas de técnicos del rubro de telecomunicaciones puedan realizar sus tareas, instalaciones, desconexiones, reparaciones, mudanzas, etc. \n\tDesde esta aplicación los técnicos pueden realizar sus tareas del día, enviar comandos a distintos dispositivos, decodificadores, Chromecast, etc. Pueden comunicarse con el cliente, pueden subir fotos de evidencia, pueden manifestar problemas con su visita.",
       },
       {
-        en: "\tIt is a field service application for technicians in the telecommunications industry to perform their tasks, installations, disconnections, repairs, moves, etc. \n\tFrom this application, technicians can perform their daily tasks, send commands to various decoders, chromecast, etc. They can communicate with the customer, upload photos as evidence, and report problems with their visit.",
+        en: "\tIt is a field service application designed for telecommunications technicians to perform tasks such as installations, disconnections, repairs, relocations, and more.\n\tThrough this application, technicians can manage their daily tasks, send commands to various devices like decoders and Chromecasts, communicate with customers, upload evidence photos, and report issues encountered during their visits.",
       },
     ],
     contentType: "gallery" as const,
@@ -74,10 +74,10 @@ const projects = [
     type:"APP",
     contentDescription: [
       {
-        es: "\tEs una aplicacion para autogestion de clientes, desde esta aplicacion los usuarios pueden ver sus servicios, sus facturas, afiliarse a un debito automatico, realizar reclamos, contratar productos, firmar contratos pendientes, etc",
+        es: "\tEs una aplicación para autogestión de clientes, desde esta aplicación los usuarios pueden ver sus servicios, sus facturas, afiliarse a un débito automático, realizar reclamos, contratar productos, firmar contratos pendientes, etc.",
       },
       {
-        en: "\tIt is an application for customer self-service, from which users can view their services, their bills, subscribe to automatic debit, make complaints, contract products, sign pending contracts, etc",
+        en: "\tIt is a self-service application for customers. Through this application, users can view their services, access their invoices, enroll in automatic payments, file complaints, purchase products, sign pending contracts, and more.",
       },
     ],
     contentType: "gallery" as const,
@@ -102,10 +102,10 @@ const projects = [
     type:"APP",
     contentDescription: [
       {
-        es: "Sistema de gestión de ventas para Alonex, aumentando la eficiencia y proporcionando análisis detallados en tiempo real.",
+        es: "\tEs una aplicación para los vendedores puerta a puerta; pueden ofrecerle a los clientes nuevos productos y servicios de telecomunicaciones como internet, telefonía, cable, etc.",
       },
       {
-        en: "Sales management system for Alonex, increasing efficiency and providing detailed real-time analytics.",
+        en: "\tIt is an application for door-to-door sales representatives. They can offer customers new telecommunications products and services such as internet, phone, cable, and more.",
       },
     ],
     contentType: "gallery" as const,
@@ -129,10 +129,10 @@ const projects = [
     type:"WEB",
     contentDescription: [
       {
-        es: "Sistema CRM personalizado, diseñado para mejorar la relación con los clientes y aumentar la productividad del equipo de ventas.",
+        es: "\tEs una solución integral que consolida la gestión de relaciones con los clientes a través de múltiples canales. Permite centralizar operaciones, monitorear interacciones en tiempo real, optimizar campañas de marketing, gestionar la deuda y automatizar notificaciones. Además, integra un marcador predictivo y herramientas avanzadas de análisis, facilitando la toma de decisiones y potenciando el crecimiento del negocio.\n\tEn una única pantalla los usuarios pueden encontrar contratos, facturas, recibos, contactos previos, equipos, servicios, scoring, avisos automáticos, una infinidad de acciones y más sobre el cliente.",
       },
       {
-        en: "Custom CRM system designed to enhance customer relationships and increase sales team productivity.",
+        en: "\tIt is a comprehensive solution that consolidates customer relationship management across multiple channels. It allows you to centralize operations, monitor interactions in real time, optimize marketing campaigns, manage debts, and automate notifications. Additionally, it integrates a predictive dialer and advanced analytics tools, facilitating decision-making and driving business growth.\n\tOn a single screen, users can access contracts, invoices, receipts, previous contacts, equipment, services, scoring, automated notifications, a wide range of actions, and more about the customer.",
       },
     ],
     contentType: "gallery" as const,
@@ -184,6 +184,7 @@ export function PortfolioSection({ lang }: { lang: "en" | "es" }) {
                 alt={project.title}
                 width={400}
                 height={400}
+                priority
                 className="w-[90%] object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
