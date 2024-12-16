@@ -14,7 +14,7 @@ const projects: Project[] = [
         es: `\tEs una aplicacion de gestion interna para el Club Nacional de Football, optimizando procesos y mejorando la eficiencia operativa. Tiene 3 modulos Operaciones, Reservas y RRHH.\n\tDesde esta aplicacion los usuarios pueden realizar sus tareas diarias, reservar canchas, salas de reuniones, gimnasios,etc. Y ademas pedir adelantos salariales o licencias como vacaciones, dias por estudio, donaciones de sangre, etc.`,
       },
       {
-        en: `\tIt is an internal management application for Club Nacional de Football, optimizing processes and improving operational efficiency. It has 3 modules: Operations, Reservations and HR.\n\tFrom this application, users can perform their daily tasks, reserve courts, meeting rooms, gyms, etc. And also request salary advances or leave as vacations, study days, blood donations, etc.`,
+        en: `\tIt is an internal management application for Club Nacional de Football, optimizing processes and improving operational efficiency. It has 3 modules: Operations, Reservations and HR.\n\tFrom this application, users can perform their daily tasks, reserve soccer fields, meeting rooms, gyms, etc. And also request salary advances or leave as vacations, study days, blood donations, etc.`,
       },
     ],
     contentType: "video" as const,
