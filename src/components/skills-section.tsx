@@ -32,7 +32,7 @@ export function SkillsSection({ lang }: { lang: "en" | "es" }) {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 xs:grid-cols-1 gap-6 justify-center">
           {skills.map((skill) => (
-            <Atropos key={skill.name} className="my-atropos shadow-md">
+            <Atropos key={skill.name} className="my-atropos shadow-md" rotateTouch='scroll-y'>
               <div
                 className="bg-bgTertiary p-6 rounded-lg flex flex-col items-center justify-center gap-4 "
               >
